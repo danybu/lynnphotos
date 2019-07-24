@@ -42,6 +42,7 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'betterlorem', '~> 0.1.2'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
