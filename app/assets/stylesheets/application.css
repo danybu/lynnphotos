@@ -14,9 +14,9 @@
  *= require_self
  */
 
- @import './navbar.scss';
- @import './main.scss';
- @import './footer.scss';
+ @import 'navbar';
+ @import 'main';
+ @import 'footer';
 
  h1 {
   font-family: 'Montserrat';
