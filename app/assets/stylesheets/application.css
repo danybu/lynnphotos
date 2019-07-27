@@ -14,9 +14,7 @@
  *= require_self
  */
 
- @import 'navbar';
- @import 'main';
- @import 'footer';
+
 
  h1 {
   font-family: 'Montserrat';
@@ -27,3 +25,6 @@ body {
   font-family: 'Fira Sans';
 }
 
+ @import 'navbar';
+ @import 'main';
+ @import 'footer';
