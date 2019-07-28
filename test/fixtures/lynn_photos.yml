@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  photo: MyString
+  year: 2019-07-27 21:16:58
+  city_taken: MyText
+  country_taken: MyText
+
+two:
+  photo: MyString
+  year: 2019-07-27 21:16:58
+  city_taken: MyText
+  country_taken: MyText
