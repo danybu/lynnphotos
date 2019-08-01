@@ -1,0 +1,6 @@
+showing all lynn_photos
+<br>
+<% @lynn_photos.each do |lphoto| %>
+foto: <%= lphoto.city_taken %>
+<%= cl_image_tag lphoto.photo, height: 300, width: 400, crop: :fill %>
+<% end %>

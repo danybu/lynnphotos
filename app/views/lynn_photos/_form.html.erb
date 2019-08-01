@@ -1,0 +1,14 @@
+<%= form_for(lynn_photo) do |f| %>
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+
+  <%= f.label :city_taken %>
+  <%= f.text_field :city_taken %>
+
+  <%= f.label :country_taken %>
+  <%= f.text_field :country_taken %>
+
+  <%= f.file_field :photo, accept: 'image/png,image/jpeg'%>
+
+  <%= f.submit %>
+<% end %>

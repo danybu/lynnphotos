@@ -1,0 +1,2 @@
+module LynnPhotosHelper
+end
