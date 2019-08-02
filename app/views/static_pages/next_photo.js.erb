@@ -1,0 +1,4 @@
+document.querySelectorAll(".mainPhoto").forEach((mp) => {
+  mp.style.backgroundImage = "url(<%= cl_image_path @lynn_photo.photo, crop: :fill %>)";
+});
+

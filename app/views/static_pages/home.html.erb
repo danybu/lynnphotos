@@ -1,4 +1,17 @@
-<div class="mainPhoto" style="background-image:url('https://picsum.photos/1600/900')">
-  <div class="leftBtn btnColumn"><i class="fas fa-caret-left"></i></div>
-  <div class="rightBtn btnColumn"><i class="fas fa-caret-right"></i></div>
+<% puts "RENDERING HOME-VIEW ID #{@lynn_photo.id}" %>
+<% cl_url = cl_image_path @lynn_photo.photo, crop: :fill %>
+<% puts "new url: #{cl_url}" %>
+
+<div class="mainPhoto" style="background-image:url('<%= cl_url %>')">
+
+  <div class="leftBtn btnColumn">
+    <%= link_to previousPhoto_path(photo_id: @lynn_photo.id), remote: true do %>
+    <i class="fas fa-caret-left"></i>
+    <% end %>
+  </div>
+  <div class="rightBtn btnColumn">
+    <%= link_to nextPhoto_path(photo_id: @lynn_photo.id), remote: true do %>
+    <i class="fas fa-caret-right"></i>
+    <% end %>
+  </div>
 </div>
