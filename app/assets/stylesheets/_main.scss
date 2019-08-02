@@ -1,5 +1,5 @@
 
- h1 {
+h1 {
   font-family: 'Montserrat';
   font-weight:200;
 }
@@ -9,17 +9,15 @@ body {
 }
 
 .mainPhoto {
-
-  // background:#555;
   flex: 1 0 auto;
   background-size:cover;
   background-position:center;
   display: flex;
   justify-content: space-between;
   color: white;
+  transition: opacity .7s ease-in-out;
   a i {
     color: white;
-
   }
 }
 

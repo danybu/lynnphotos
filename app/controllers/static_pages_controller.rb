@@ -7,6 +7,11 @@ class StaticPagesController < ApplicationController
     # binding.pry
     load_photo
     @lynn_photo = $current_photo
+    respond_to do |format|
+      format.html { }
+      format.js { }
+
+    end
   end
 
   def next_photo

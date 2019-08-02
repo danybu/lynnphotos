@@ -1,4 +1,12 @@
 document.querySelectorAll(".mainPhoto").forEach((mp) => {
-  mp.style.backgroundImage = "url(<%= cl_image_path @lynn_photo.photo, crop: :fill %>)";
+  mp.style.opacity = 0
+
+  setTimeout(function () {
+    mp.style.backgroundImage = "url(<%= cl_image_path @lynn_photo.photo, crop: :fill %>)";
+    mp.style.opacity=1
+    }, 700);
 });
 
+document.querySelectorAll(".picInfoText").forEach((picinf) => {
+  picinf.innerText = "<%= @lynn_photo.city_taken %> , <%= @lynn_photo.country_taken %> "
+});
