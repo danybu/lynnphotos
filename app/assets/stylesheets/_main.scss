@@ -1,11 +1,18 @@
 
-h1 {
+h1,h2 {
   font-family: 'Montserrat';
   font-weight:200;
 }
 
+
 body {
   font-family: 'Fira Sans';
+  font-weight: 200;
+}
+
+p {
+  font-size: 15px;
+
 }
 
 .mainPhoto {
@@ -16,12 +23,15 @@ body {
   justify-content: space-between;
   color: white;
   transition: opacity .7s ease-in-out;
+  margin-left:20vh;
+  margin-right:20vh;
   a i {
     color: white;
   }
 }
 
 body {  
+  position:relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -39,6 +49,33 @@ body {
 }
 // TEMPORARY DISABLE ALERT AND NOTICE
 .alert, .notice {
-  display:none;
+  z-index: 1;
+  position: absolute;
+  margin-left:20vh;
+  color:#CCC;
+  margin-top:4vh;
 }
 
+.lynnphotosContainer {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+    margin-top:4vh;
+}
+
+.photoContainer {
+  padding: 1vh 0;
+}
+
+.orderFramesDiv, .aboutLynnDiv {
+
+  background:linear-gradient(to bottom, #FFF, #CCC 75%);
+  padding:2vh 20vh;
+}
+
+.aboutLynnDiv {
+  padding-bottom:20vh;
+  p a {
+    color:black;
+  }
+}

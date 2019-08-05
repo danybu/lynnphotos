@@ -1,6 +1,14 @@
-showing all lynn_photos
-<br>
+<%= render 'components/navbar' %>
+
+<div class="orderFramesDiv">
+<h2>Order picture frames.</h2>
+<p>Select the pictures you like, and then click order to contact Lynn.  One picture frame is 15€.</p>
+<div class="lynnphotosContainer">
 <% @lynn_photos.each do |lphoto| %>
-foto: <%= lphoto.city_taken %>
-<%= cl_image_tag lphoto.photo, height: 300, width: 400, crop: :fill %>
+<div class="photoContainer">
+<%= cl_image_tag lphoto.photo, height: 250, crop: :fill %>
+<p>foto: <%= lphoto.city_taken %></p>
+</div>
 <% end %>
+</div>
+</div>

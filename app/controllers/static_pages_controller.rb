@@ -10,7 +10,6 @@ class StaticPagesController < ApplicationController
     respond_to do |format|
       format.html { }
       format.js { }
-
     end
   end
 
@@ -36,6 +35,8 @@ class StaticPagesController < ApplicationController
     @lynn_photo = $current_photo
   end
 
+  def about
+  end
   def load_photo
     $current_photo = LynnPhoto.find_by(id: $current_photo_id)
     if $current_photo.nil?

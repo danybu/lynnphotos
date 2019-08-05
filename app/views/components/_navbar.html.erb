@@ -2,11 +2,14 @@
   <div class="bgTitle">
     <h1 class="mainTitle">Lynn Raeymaekers photography</h1>
   </div>    
-    <div class="links">
-      <ul>
-        <li>about</li>
-        <li>liked some photo's?</li>
-        <li>contact</li>
-      </ul>
-    </div>
+  <div class="links">
+    <ul>
+      <li><%= link_to "About", static_pages_about_path%></li>
+      <li><%= link_to "Liked some photo's?", lynn_photos_path %> </li>
+      <% if !current_user.nil? %>
+      <li><%= link_to 'Upload new photo', new_lynn_photo_path %> </li>
+      <li> <%= link_to 'Logout', destroy_user_session_path, method: :delete %> </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
