@@ -1,7 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  $current_photo_id = LynnPhoto.all.first.id.to_i
-  $current_photo
+  $current_photo = LynnPhoto.all.first
 
   def home
     # binding.pry
@@ -14,8 +13,9 @@ class StaticPagesController < ApplicationController
   end
 
   def next_photo
-    $current_photo_id += 1
-    load_photo
+    # binding.pry
+    $current_photo = next_photo_for($current_photo)
+    # load_photo
     @lynn_photo = $current_photo
     # render 'static_pages/home'
     respond_to do |format|
@@ -25,18 +25,37 @@ class StaticPagesController < ApplicationController
   end
 
   def previous_photo
-    if $current_photo_id == LynnPhoto.all.first.id.to_i
-      $current_photo_id = LynnPhoto.all.last.id.to_i
-    else
-      $current_photo_id -= 1
-
-    end
-    load_photo
+    $current_photo = previous_photo_for($current_photo)
     @lynn_photo = $current_photo
+    # render 'static_pages/home'
+    respond_to do |format|
+      format.js { }
+      format.html { redirect_to root_path, turbolinks: false }
+    end
   end
 
   def about
   end
+
+  private
+  def next_photo_for(photo)
+    next_photo = LynnPhoto.where("id > ?", photo.id).first
+    if !next_photo.nil?
+      return next_photo
+    else
+      return LynnPhoto.all.first
+    end
+  end
+
+  def previous_photo_for(photo)
+    previous_photo = LynnPhoto.where("id < ?", photo.id).last
+    if !previous_photo.nil?
+      return previous_photo
+    else
+      return LynnPhoto.all.last
+    end
+  end
+
   def load_photo
     $current_photo = LynnPhoto.find_by(id: $current_photo_id)
     if $current_photo.nil?
