@@ -1,7 +1,7 @@
 lynnphotoid = <%= id %>
 // alert ("marcheert, we tonen photo id" + lynnphotoid);
 fullscreenDiv = document.querySelector(".photoFullScreen");
-querySelector(".orderFramesDiv").style.display = "none";
+document.querySelector(".orderFramesDiv").style.display = "none";
 fullscreenDiv.style.display="block";
 photoBG = document.querySelector(".photoBG");
 photoBG.style.backgroundImage = "url('<%= cl_image_path @lynn_photo.photo, height: 1021, crop: :fit %>')";
@@ -9,7 +9,7 @@ photoBG.style.backgroundPosition = "center";
 photoBG.style.backgroundRepeat = "no-repeat";
 photoBG.addEventListener("click",(e)=> {
   fullscreenDiv.style.display = "none";
-  querySelector(".orderFramesDiv").style.display = "block";
+  document.querySelector(".orderFramesDiv").style.display = "block";
 
 })
 
