@@ -1,6 +1,6 @@
 <% puts "RENDERING HOME-VIEW ID #{@lynn_photo.id}" %>
 
-<%= render 'components/navbar' %>
+<%= render 'components/navbar', home: true %>
 
 <% cl_url = cl_image_path @lynn_photo.photo, height: 1021, width: 1530, crop: :fill %>
 <% puts "new url: #{cl_url}" %>

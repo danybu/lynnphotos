@@ -1,14 +1,31 @@
-<%= render 'components/navbar' %>
+<div class="bodyContainer">
+  <div class="photoFullScreen">
+    <div class="photoBG"></div>
+  </div>
+  <%= render 'components/navbar', home: false %>
 
-<div class="orderFramesDiv">
-<h2>Order picture frames.</h2>
-<p>Select the pictures you like, and then click order to contact Lynn.  One picture frame is 15€.</p>
-<div class="lynnphotosContainer">
-<% @lynn_photos.each do |lphoto| %>
-<div class="photoContainer">
-<%= cl_image_tag lphoto.photo, height: 250, crop: :fill %>
-<p>foto: <%= lphoto.city_taken %></p>
-</div>
-<% end %>
-</div>
+  <div class="orderFramesDiv">
+    <h2>Order picture frames</h2>
+    <p>Select the pictures you like, and then click order to contact Lynn. </p><p> One picture frame is 15€.</p>
+    <div class="lynnphotosContainer">
+      <% @lynn_photos.each do |lphoto| %>
+      <div class="photoContainer">
+        <%= link_to lynn_photo_path(lphoto), remote: true do %>
+        <%= cl_image_tag lphoto.photo, height: 250, crop: :fill %>
+        <div class="bottomLine">
+          <p>foto: <%= lphoto.city_taken %></p>
+          <div class="icons">
+            <div class="likeDiv">
+              <i class="far fa-heart"></i>
+            </div>
+            <% if !current_user.nil? %>
+            <i class="fas fa-trash"></i>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

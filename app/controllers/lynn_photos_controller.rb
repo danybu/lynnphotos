@@ -2,10 +2,15 @@ class LynnPhotosController < ApplicationController
   def index
     @lynn_photos = LynnPhoto.all
     puts "going into index with #{@lynn_photos.size} fotos"
+    
   end
 
   def show
     @lynn_photo = LynnPhoto.find(params[:id])
+    respond_to do |format|
+      format.js { render "show", :locals => {:id => @lynn_photo.id} }      
+      format.html {  }
+    end
   end
 
   def new

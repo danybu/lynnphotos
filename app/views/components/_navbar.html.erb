@@ -1,9 +1,17 @@
 <div class="navbar">
   <div class="bgTitle">
-    <h1 class="mainTitle">Lynn Raeymaekers photography</h1>
+      <%= link_to static_pages_home_path do %>
+          <h1 class="mainTitle">
+            Lynn Raeymaekers photography
+    </h1>
+
+      <% end %>
   </div>    
   <div class="links">
     <ul>
+      <% if !home %>
+      <li> <%= link_to "Home", static_pages_home_path %></li>
+      <% end %>
       <li><%= link_to "About", static_pages_about_path%></li>
       <li><%= link_to "Liked some photo's?", lynn_photos_path %> </li>
       <% if !current_user.nil? %>

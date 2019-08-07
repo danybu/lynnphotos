@@ -1,20 +1,27 @@
 .navbar {
-  height: 21vh;
+  height: 18vh;
   position:relative;
   margin-right:20vh;
+  a {
+    z-index:10;
+    text-decoration:none;
+    color:black;
+  }
 
   .bgTitle {
-    z-index:-1;
+    // z-index:-1;
     display:flex;
     width:100%;
     height:100%;
     position:relative;
     justify-content:flex-end;
     align-items:center;
+
     h1 {
       margin-right: 0;
       margin-top: 0;
       font-size: 28px;
+
     }
   }
 

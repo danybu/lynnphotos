@@ -35,7 +35,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
+  min-height:100vh;
   margin: 0;
 }
 
@@ -54,28 +55,66 @@ body {
   margin-left:20vh;
   color:#CCC;
   margin-top:4vh;
+  width:10em;
 }
 
 .lynnphotosContainer {
   display:flex;
   flex-wrap:wrap;
   justify-content:space-between;
-    margin-top:4vh;
+  margin-top:4vh;
 }
+
 
 .photoContainer {
   padding: 1vh 0;
+  a {
+    text-decoration:none;
+    color:black;
+  }
+  .bottomLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
 }
 
 .orderFramesDiv, .aboutLynnDiv {
-
+  flex:1 0 auto;
   background:linear-gradient(to bottom, #FFF, #CCC 75%);
   padding:2vh 20vh;
 }
 
 .aboutLynnDiv {
-  padding-bottom:20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   p a {
     color:black;
+  }
+}
+
+.bodyContainer {
+  position:relative;
+  min-height:100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.photoFullScreen {
+  background:linear-gradient(to bottom, #FFF, #DDD 75%);
+
+  display:none;
+  z-index:1000;
+  // background:purple;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .photoBG {
+    margin:5vh 5vw;
+    width:90vw;
+    height:90vh;
+    background-size:contain;
   }
 }
