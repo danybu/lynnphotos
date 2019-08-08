@@ -10,7 +10,7 @@ $lynnMail = "dany.buts@gmail.com"
     @greeting = "Hi Lynn,"
     @from_name = from_name
     @pictures = picture_ids.map {|id| LynnPhoto.find_by(id:id)}
-    @extra_txext = extra_text
+    @extra_text = extra_text
     puts "let us mail"
     mail(to: $lynnMail, subject: subject, from: from_mail)
   end
