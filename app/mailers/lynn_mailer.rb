@@ -6,13 +6,12 @@ $lynnMail = "dany.buts@gmail.com"
   #
   #   en.lynn_mailer.order.subject
   #
-  def order(from_mail, from_name, picture_ids, extra_text)
+  def order(from_mail, to_mail, subject, from_name, picture_ids, extra_text)
     @greeting = "Hi Lynn,"
     @from_name = from_name
     @pictures = picture_ids.map {|id| LynnPhoto.find_by(id:id)}
-    @extra_text = extra_text
+    @extra_txext = extra_text
     puts "let us mail"
-    mail(to: $lynnMail, subject: "I am intrested in your photo's", from: from_mail)
-    mail(to: from_mail, subject: "your mail to Lynn Raeymaekers", from: $lynnMail)
+    mail(to: $lynnMail, subject: subject, from: from_mail)
   end
 end

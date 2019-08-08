@@ -34,6 +34,10 @@ class LynnPhotosController < ApplicationController
   end
   
   def destroy
+    puts "let us destroy, amen"
+    @lynn_photo = LynnPhoto.find_by(id: params[:id])
+    @lynn_photo.destroy!
+    redirect_to lynn_photos_path
   end
 
   private

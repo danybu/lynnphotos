@@ -40,7 +40,9 @@
             <i class="far fa-heart" style="color:#AAA"></i>
           </div>
           <% if !current_user.nil? %>
-          <i class="fas fa-trash"></i>
+            <%= link_to lynn_photo_path(lphoto), method: :delete do %> 
+              <i class="fas fa-trash"></i>
+            <% end %>
           <% end %>
         </div>
       </div>

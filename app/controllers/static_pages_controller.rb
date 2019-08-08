@@ -39,13 +39,14 @@ class StaticPagesController < ApplicationController
 
   def write_mail
     puts params[:anything]
-    puts "---"
+    to_mail = "dany.buts@gmail.com"
     from_mail = params[:anything]["from_mail"]
     from_name = params[:anything]["from_name"]
     from_text = params[:anything]["comment"]
     puts from_text
     picture_ids = params[:anything]["selection"].split("-")
-    LynnMailer.order(from_mail,from_name,picture_ids,from_text).deliver_now
+    LynnMailer.order(from_mail,to_mail,"I am interested in your photo's",from_name,picture_ids,from_text).deliver_now
+    LynnMailer.order(to_mail,from_mail,"Your mail to Lynn Raeymaekers",from_name,picture_ids,from_text).deliver_now
   end
 
   private
