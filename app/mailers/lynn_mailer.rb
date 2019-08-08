@@ -1,6 +1,6 @@
 class LynnMailer < ApplicationMailer
 
-$lynnMail = "danybu.danybu@gmail.com"
+$lynnMail = "dany.buts@gmail.com"
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
