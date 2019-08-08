@@ -76,42 +76,89 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
 }
 
-.orderFramesDiv, .aboutLynnDiv {
-  flex:1 0 auto;
-  background:linear-gradient(to bottom, #FFF, #CCC 75%);
-  padding:2vh 20vh;
-}
-
-.aboutLynnDiv {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  p a {
-    color:black;
+.formrow {
+  display:flex;
+  width:100%;
+  // justify-content:space-between;
+  margin-bottom:.5em;
+  label {
+    width:30%;
+    text-align:right;
+    padding-right:1em;
+    font-size:12px;
+  }
+  input, textarea {
+    width:50%;
+    background-color:rgba(255,255,255,.5);
+    border:none;
+  }
+  textarea {
+    resize:none;
   }
 }
-
-.bodyContainer {
-  position:relative;
-  min-height:100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.photoFullScreen {
-  background:linear-gradient(to bottom, #FFF, #DDD 75%);
-
+#sendSelection {
   display:none;
-  z-index:1000;
+}
+.orderButtonDiv {
+  display:flex;
+  justify-content:center;
+  padding-bottom:2em;
+}
+.orderButton {
+  margin-top: 2em;
+  border: 1px solid rgba(100,100,100,.4);
+  border-radius:10px;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline;
+  justify-content: center;
+    /* display: flex; */
+    width: 10em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .orderFramesDiv, .aboutLynnDiv {
+    flex:1 0 auto;
+    background:linear-gradient(to bottom, #FFF, #CCC 75%);
+    padding:2vh 20vh;
+  }
+
+.mailConfirm {
+  margin-left:20vh;
+  margin-right:20vh;
+}
+  .aboutLynnDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p a {
+      color:black;
+    }
+  }
+
+
+  .bodyContainer {
+    position:relative;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photoFullScreen {
+    background:linear-gradient(to bottom, #FFF, #DDD 75%);
+
+    display:none;
+    z-index:1000;
   // background:purple;
   position: absolute;
   top: 0;
   left: 0;
   .photoBG {
+    border-radius:10px;
     margin:5vh 5vw;
     width:90vw;
     height:90vh;

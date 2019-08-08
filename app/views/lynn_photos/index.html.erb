@@ -1,3 +1,21 @@
+
+<script>
+  const toggleLike = (likeDiv) => {
+    let i = likeDiv.querySelector('i');
+    i.classList.toggle('far');
+    i.classList.toggle('fas');
+    if (i.classList.contains('fas')) i.style.color='rgba(150,0,0,.6)'; else i.style.color='#AAA'; 
+  };
+  const makeOrder = (orderButtonDiv) => {
+    selection = ''
+    document.querySelectorAll(".lynnphotosContainer .photoContainer").forEach((photoCont) => {
+      if (photoCont.querySelector(".likeDiv i").classList.contains("fas")) 
+        selection += photoCont.querySelector(".idDiv").textContent.trim() + '-'
+    });
+    return selection;
+  }
+</script>
+
 <div class="bodyContainer">
   <div class="photoFullScreen">
     <div class="photoBG"></div>
@@ -12,20 +30,52 @@
       <div class="photoContainer">
         <%= link_to lynn_photo_path(lphoto), remote: true do %>
         <%= cl_image_tag lphoto.photo, height: 250, crop: :fill %>
+        <% end %>
         <div class="bottomLine">
+          <p class="idDiv" style="display:none"> <%= lphoto.id %></p>
           <p>foto: <%= lphoto.city_taken %></p>
           <div class="icons">
-            <div class="likeDiv">
-              <i class="far fa-heart"></i>
-            </div>
-            <% if !current_user.nil? %>
-            <i class="fas fa-trash"></i>
-            <% end %>
+            <div class="likeDiv" onclick="toggleLike(this);
+            ">
+            <i class="far fa-heart" style="color:#AAA"></i>
           </div>
+          <% if !current_user.nil? %>
+          <i class="fas fa-trash"></i>
+          <% end %>
         </div>
-        <% end %>
       </div>
-      <% end %>
+    </div>
+    <% end %>
+  </div>
+  <hr>
+  <div class="contact">
+    <h2>Contact Lynn about ordering the selected pictures</h2>
+    <p>Leave your coordinates and Lynn will answer to you shortly.</p>
+    <%= form_for :anything, :url => url_for(:controller => 'static_pages', :action => 'write_mail'),
+    :html => { :id => "writeMailForm" } do |f| %>
+    <%= f.hidden_field :selection, value: ''%>
+    <div class="formrow">
+      <%= f.label :your_name %>
+      <%= f.text_field(:from_name)%>
+    </div>
+    <div class="formrow">
+      <%= f.label :your_mail %>
+      <%= f.text_field(:from_mail)%>
+    </div>
+    <div class="formrow">
+      <%= f.label :your_message %>
+      <%= f.text_area(:comment, size: "30x10")%>
+    </div>
+
+    <%= f.submit 'should be hidden', id:'sendSelection' %>
+    <% end %>
+  </div>
+  <div class="orderButtonDiv">
+    <div class="orderButton" onclick="document.querySelector('#anything_selection').value=makeOrder(this); document.querySelector('#writeMailForm').submit();">
+    send
     </div>
   </div>
+</div>
+
+
 </div>

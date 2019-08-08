@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   get "/nextPhoto" => "static_pages#next_photo", as: "nextPhoto"
   get "/previousPhoto" => "static_pages#previous_photo", as: "previousPhoto"
+  post "/write_mail" => "static_pages#write_mail", as: "writeMail"
 end

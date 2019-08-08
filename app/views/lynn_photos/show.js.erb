@@ -10,6 +10,9 @@ photoBG.style.backgroundRepeat = "no-repeat";
 photoBG.addEventListener("click",(e)=> {
   fullscreenDiv.style.display = "none";
   document.querySelector(".orderFramesDiv").style.display = "block";
-
-})
-
+});
+photoBG.querySelector(".likeDiv").addEventListener("click",(e)=>{
+  let i = photoBG.querySelector(".likeDiv i");
+  i.classList.toggle("far");
+  i.toggle("fas");
+});
