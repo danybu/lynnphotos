@@ -37,6 +37,17 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def write_mail
+    puts params[:anything]
+    puts "---"
+    from_mail = params[:anything]["from_mail"]
+    from_name = params[:anything]["from_name"]
+    from_text = params[:anything]["comment"]
+    puts from_text
+    picture_ids = params[:anything]["selection"].split("-")
+    LynnMailer.order(from_mail,from_name,picture_ids,from_text).deliver_now
+  end
+
   private
   def next_photo_for(photo)
     next_photo = LynnPhoto.where("id > ?", photo.id).first

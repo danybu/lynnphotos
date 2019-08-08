@@ -52,6 +52,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-nav'
+  gem 'letter_opener'
 end
 
 group :development do
