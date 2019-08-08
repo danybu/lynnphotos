@@ -1,3 +1,21 @@
+
+<script>
+  const toggleLike = (likeDiv) => {
+    let i = likeDiv.querySelector('i');
+            i.classList.toggle('far');
+            i.classList.toggle('fas');
+            if (i.classList.contains('fas')) i.style.color='rgba(150,0,0,.6)'; else i.style.color='#AAA'; 
+  };
+  const makeOrder = (orderButtonDiv) => {
+    let mailText = "Hi Lynn, i'm interested in the following pictures: <br>"; 
+    document.querySelectorAll(".lynnphotosContainer .photoContainer").forEach((photoCont) => {
+      console.log(photoCont);
+      mailText += `picture ${photoCont.querySelector(".idDiv").textContent} ,<br>`;
+    });
+    console.log(mailText);
+  }
+</script>
+
 <div class="bodyContainer">
   <div class="photoFullScreen">
     <div class="photoBG"></div>
@@ -11,21 +29,26 @@
       <% @lynn_photos.each do |lphoto| %>
       <div class="photoContainer">
         <%= link_to lynn_photo_path(lphoto), remote: true do %>
-        <%= cl_image_tag lphoto.photo, height: 250, crop: :fill %>
+          <%= cl_image_tag lphoto.photo, height: 250, crop: :fill %>
+        <% end %>
         <div class="bottomLine">
+          <p class="idDiv" style="display:hidden"> <%= lphoto.id %></p>
           <p>foto: <%= lphoto.city_taken %></p>
           <div class="icons">
-            <div class="likeDiv">
-              <i class="far fa-heart"></i>
+            <div class="likeDiv" onclick="toggleLike(this);
+            ">
+              <i class="far fa-heart" style="color:#AAA"></i>
             </div>
             <% if !current_user.nil? %>
             <i class="fas fa-trash"></i>
             <% end %>
           </div>
         </div>
-        <% end %>
       </div>
       <% end %>
+    </div>
+    <div class="orderButtonDiv" onclick="makeOrder(this)">
+      Contact Lynn about selected pictures
     </div>
   </div>
 </div>

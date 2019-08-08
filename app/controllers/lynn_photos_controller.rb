@@ -1,8 +1,10 @@
 class LynnPhotosController < ApplicationController
   def index
     @lynn_photos = LynnPhoto.all
-    puts "going into index with #{@lynn_photos.size} fotos"
-    
+    respond_to do |format|
+      format.js { render "index" }      
+      format.html {  }
+    end
   end
 
   def show
