@@ -1,7 +1,7 @@
 
 <%= render 'components/navbar', home: true %>
 
-<% cl_url = cl_image_path @lynn_photo.photo, height: 1021, width: 1530, crop: :fill %>
+<% cl_url = cl_image_path @lynn_photo.photo, height: 1021, width: 1530, crop: :fill, :quality=>"auto:low" %>
 <% puts "new url: #{cl_url}" %>
 
 <div class="mainPhoto" style="background-image:url('<%= cl_url %>')">
@@ -22,4 +22,7 @@
 
 <script>
   let y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 8000);
+  document.querySelector(".rightBtn a").addEventListener("click", () => {clearInterval(y)});
+  document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y)})
+
 </script>
