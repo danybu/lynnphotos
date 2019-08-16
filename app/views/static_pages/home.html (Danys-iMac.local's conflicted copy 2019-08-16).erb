@@ -1,0 +1,41 @@
+
+<%= render 'components/navbar', home: true %>
+
+<% cl_url = cl_image_path @lynn_photo.photo, height: 1021, crop: :limit, :quality=>"auto:low" %>
+<% puts "new url: #{cl_url}" %>
+
+<div class="mainPhoto" style="background-image:url('<%= cl_url %>')">
+
+  <div class="leftBtn btnColumn">
+    <%= link_to previousPhoto_path(photo_id: @lynn_photo.id), remote: true do %>
+    <i class="fas fa-caret-left"></i>
+    <% end %>
+  </div>
+  <div class="middlePart"></div>
+  <div class="rightBtn btnColumn">
+    <%= link_to nextPhoto_path(photo_id: @lynn_photo.id), remote: true do %>
+    <i class="fas fa-caret-right"></i>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'components/footer' %>
+
+<script>
+  let y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 8000);
+  document.querySelector(".rightBtn a").addEventListener("click", () => {clearInterval(y)});
+  document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y)});
+  document.querySelector(".middlePart").addEventListener("click", () => {
+    const navBar = document.querySelector(".navbar");
+    navBar.classList.toggle("hideDiv");
+    if (navBar.classList.contains("hideDiv")) {
+      document.querySelector(".mainPhoto").style.backgroundSize = "contain";
+    } else {
+      document.querySelector(".mainPhoto").style.backgroundSize = "cover";
+
+    }
+    document.querySelector(".footer").classList.toggle("hideDiv");
+
+  });
+
+</script>

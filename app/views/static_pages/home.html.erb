@@ -22,12 +22,12 @@
 <%= render 'components/footer' %>
 
 <script>
-  y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 5000);
+  y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 7000);
   document.querySelector(".rightBtn a").addEventListener("click", () => {clearInterval(y);
-    y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 5000);
+    y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 7000);
   });
   document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y);
-    y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 5000);
+    y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 7000);
   });
   document.addEventListener("keydown", (event) => {
     console.log("key!");
@@ -63,8 +63,10 @@
 
     } else {
       mainPhoto.style.backgroundSize = "cover";
-      mainPhoto.style.marginLeft = "20vh";
-      mainPhoto.style.marginRight = "20vh";
+      let marVar="20vh";
+      if (window.innerWidth < 1024) marVar = "4vw";
+      mainPhoto.style.marginLeft = marVar;
+      mainPhoto.style.marginRight = marVar;
 
     }
     document.querySelector(".footer").classList.toggle("hideDiv");

@@ -1,0 +1,212 @@
+
+h1,h2 {
+  font-family: 'Montserrat';
+  font-weight:200;
+}
+
+h1 {
+  font-size:24px;
+}
+h2 {
+  font-size:20px;
+}
+
+body {
+  font-family: 'Fira Sans';
+  font-weight: 200;
+}
+
+p {
+  font-size: 14px;
+
+}
+
+.iconDiv {
+  // text-align:right;
+  margin-right:10px;
+  width:1.5em;
+
+}
+
+.contactrow {
+  display:flex;
+  font-size: 14px;
+  a {
+    color:black;
+  }
+}
+
+.mainPhoto {
+  flex: 1 0 auto;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  transition: opacity .7s ease-in-out;
+  margin-left:20vh;
+  margin-right:20vh;
+  a i {
+    color: white;
+  }
+}
+
+.middlePart {
+  width:100%;
+}
+
+body {
+  position:relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  min-height:100vh;
+  margin: 0;
+}
+
+
+.btnColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2vh;
+  font-size: 4vh;
+}
+// TEMPORARY DISABLE ALERT AND NOTICE
+.alert, .notice {
+  z-index: 1;
+  position: absolute;
+  margin-left:20vh;
+  color:#CCC;
+  margin-top:4vh;
+  width:10em;
+}
+
+.lynnphotosContainer {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  margin-top:4vh;
+}
+
+
+.photoContainer {
+  padding: 1vh 0;
+  a {
+    text-decoration:none;
+    color:black;
+  }
+  .bottomLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.formrow {
+  display:flex;
+  width:100%;
+  // justify-content:space-between;
+  margin-bottom:.5em;
+  label {
+    width:30%;
+    text-align:right;
+    padding-right:1em;
+    font-size:12px;
+  }
+  input, textarea {
+    width:50%;
+    background-color:rgba(255,255,255,.5);
+    border:none;
+  }
+  textarea {
+    resize:none;
+  }
+}
+
+#writeSimpleMailForm {
+
+    padding: 1em 2em;
+    border: 1px solid #CCC;
+    margin-top: 2em;
+    border-radius: 5px;
+    width: fit-content;
+    input, textarea {
+      width:100%;
+    }
+}
+#sendSelection {
+  display:none;
+}
+.orderButtonDiv {
+  display:flex;
+  justify-content:center;
+  padding-bottom:2em;
+}
+.orderButton {
+  margin-top: 2em;
+  border: 1px solid rgba(100,100,100,.4);
+  border-radius:10px;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline;
+  justify-content: center;
+    /* display: flex; */
+    width: 10em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .orderFramesDiv, .aboutLynnDiv {
+    flex:1 0 auto;
+    background:linear-gradient(to bottom, #FFF, #CCC 75%);
+    padding:2vh 20vh;
+  }
+
+  .mailConfirm {
+    margin-left:20vh;
+    margin-right:20vh;
+  }
+  .aboutLynnDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p a {
+      color:black;
+    }
+  }
+
+  .orderContact {
+    display:none;
+  }
+
+  .hideDiv {
+    display:none !important;
+  }
+
+  .bodyContainer {
+    position:relative;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photoFullScreen {
+    background:linear-gradient(to bottom, #FFF, #DDD 75%);
+
+    display:none;
+    z-index:1000;
+  // background:purple;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .photoBG {
+    border-radius:10px;
+    margin:5vh 5vw;
+    width:90vw;
+    height:90vh;
+    background-size:contain;
+  }
+}
