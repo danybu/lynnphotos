@@ -26,9 +26,14 @@
   document.querySelector(".rightBtn a").addEventListener("click", () => {clearInterval(y)});
   document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y)});
   document.querySelector(".middlePart").addEventListener("click", () => {
-    console.log("click");
     const navBar = document.querySelector(".navbar");
     navBar.classList.toggle("hideDiv");
+    if (navBar.classList.contains("hideDiv")) {
+      document.querySelector(".mainPhoto").style.backgroundSize = "contain";
+    } else {
+      document.querySelector(".mainPhoto").style.backgroundSize = "cover";
+
+    }
     document.querySelector(".footer").classList.toggle("hideDiv");
 
   });
