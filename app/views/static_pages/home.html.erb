@@ -22,27 +22,27 @@
 <%= render 'components/footer' %>
 
 <script>
-  y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 8000);
+  y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 5000);
   document.querySelector(".rightBtn a").addEventListener("click", () => {clearInterval(y)});
   document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y)});
   document.addEventListener("keydown", (event) => {
     console.log("key!");
     switch (event.key) {
       case "ArrowLeft":
-      // clearInterval(y);
+      clearInterval(y);
       document.querySelector(".leftBtn a").click();
       break;
       case "ArrowRight":
-      // clearInterval(y);
+      clearInterval(y);
       document.querySelector(".rightBtn a").click();
 
       break;
       case "ArrowUp":
       // clearInterval(y);
-      document.querySelector(".leftBtn a").click();
+      // document.querySelector(".leftBtn a").click();
       break;
       case "ArrowDown":
-      // clearInterval(y);
+      clearInterval(y);
       document.querySelector(".rightBtn a").click();
       break;
     }
