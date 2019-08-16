@@ -4,12 +4,12 @@
     let i = likeDiv.querySelector('i');
     i.classList.toggle('far');
     i.classList.toggle('fas');
-    if (i.classList.contains('fas')) i.style.color='rgba(150,0,0,.6)'; else i.style.color='#AAA'; 
+    if (i.classList.contains('fas')) i.style.color='rgba(150,0,0,.6)'; else i.style.color='#AAA';
   };
   const makeOrder = (orderButtonDiv) => {
     selection = ''
     document.querySelectorAll(".lynnphotosContainer .photoContainer").forEach((photoCont) => {
-      if (photoCont.querySelector(".likeDiv i").classList.contains("fas")) 
+      if (photoCont.querySelector(".likeDiv i").classList.contains("fas"))
         selection += photoCont.querySelector(".idDiv").textContent.trim() + '-'
     });
     return selection;
@@ -23,8 +23,8 @@
   <%= render 'components/navbar', home: false %>
 
   <div class="orderFramesDiv">
-    <h2>Order picture frames</h2>
-    <p>Select the pictures you like, and then click order to contact Lynn. </p><p> One picture frame is 15€.</p>
+    <h2>Prints</h2>
+    <p>The following pictures are available as prints, with different frame options. </p><p> Do contact me for more information.</p>
     <div class="lynnphotosContainer">
       <% @lynn_photos.each do |lphoto| %>
       <div class="photoContainer">
@@ -33,24 +33,23 @@
         <% end %>
         <div class="bottomLine">
           <p class="idDiv" style="display:none"> <%= lphoto.id %></p>
-          <p>foto: <%= lphoto.city_taken %></p>
+          <p>photo: <%= lphoto.city_taken %>, <%= lphoto.country_taken %> <%= lphoto.year %> <br> <em style="color:#999">reference: <%= lphoto.id %></em></p>
           <div class="icons">
-            <div class="likeDiv" onclick="toggleLike(this);
-            ">
+        <!--     <div class="likeDiv" onclick="toggleLike(this);">
             <i class="far fa-heart" style="color:#AAA"></i>
-          </div>
+          </div> -->
           <% if !current_user.nil? %>
-            <%= link_to lynn_photo_path(lphoto), method: :delete do %> 
-              <i class="fas fa-trash"></i>
-            <% end %>
+          <%= link_to lynn_photo_path(lphoto), method: :delete do %>
+          <i class="fas fa-trash"></i>
+          <% end %>
           <% end %>
         </div>
       </div>
     </div>
     <% end %>
   </div>
-  <hr>
-  <div class="contact">
+  <!-- <hr> -->
+  <div class="contact orderContact">
     <h2>Contact Lynn about ordering the selected pictures</h2>
     <p>Leave your coordinates and Lynn will answer to you shortly.</p>
     <%= form_for :anything, :url => url_for(:controller => 'static_pages', :action => 'write_mail'),
@@ -71,12 +70,13 @@
 
     <%= f.submit 'should be hidden', id:'sendSelection' %>
     <% end %>
-  </div>
-  <div class="orderButtonDiv">
-    <div class="orderButton" onclick="document.querySelector('#anything_selection').value=makeOrder(this); document.querySelector('#writeMailForm').submit();">
-    send
+    <div class="orderButtonDiv">
+      <div class="orderButton" onclick="document.querySelector('#anything_selection').value=makeOrder(this); document.querySelector('#writeMailForm').submit();">
+        send
+      </div>
     </div>
   </div>
+
 </div>
 
 

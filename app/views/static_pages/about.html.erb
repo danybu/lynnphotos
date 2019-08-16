@@ -2,12 +2,44 @@
 
 <div class="aboutLynnDiv">
 
-<h2>About Lynn</h2>
+  <h2>About</h2>
 
-<p>Lynn would like to maintain mystical and doesn't like too much blabla about herself.
-</p>
+  <p>
+    I am a freelance editor based in Belgium.  I am a professional editor with over 20 years experience and I like to tell stories with moving images.
+  Also when I travel I like to tell stories. This time through photography. </p>
 
-<p>You can follow her on <%= link_to 'instagram', "https://www.instagram.com/lynnraey_travel/" %>.</p>
+  <p>
+    I use the Panasonic DMC-GM1. I like this camera because it is very small and discreet.
+  </p>
+
+  <p>You can also follow me on <%= link_to 'instagram', "https://www.instagram.com/lynnraey_travel/" %>.</p>
+
+  <h2>Contact</h2>
+  <div class="contact">
+    <div class="contactrow">  <div class="iconDiv"><i class="fas fa-mobile-alt"></i></div> 0032 489 56 93 05  </div>
+    <div class="contactrow">  <div class="iconDiv"><i class="far fa-envelope"></i> </div> <a href="mailto:lynnraey1@gmail.com">lynnraey1@gmail.com </a></div>
+  </div>
+  <div class="contact simple">
+    <%= form_for :anything, :url => url_for(:controller => 'static_pages', :action => 'write_simple_mail'),
+    :html => { :id => "writeSimpleMailForm" } do |f| %>
+    <div class="formrow">
+      <%= f.label :your_name %>
+      <%= f.text_field(:from_name)%>
+    </div>
+    <div class="formrow">
+      <%= f.label :your_mail %>
+      <%= f.text_field(:from_mail)%>
+    </div>
+    <div class="formrow">
+      <%= f.label :your_message %>
+      <%= f.text_area(:comment, size: "30x10")%>
+    </div>
+    <%= f.submit 'should be hidden', id:'sendSelection', class:'orderButton' %>
+    <% end %>
+  </div>
+</div>
+
+
 
 </div>
 

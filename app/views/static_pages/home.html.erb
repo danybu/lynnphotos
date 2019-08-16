@@ -1,7 +1,7 @@
 
 <%= render 'components/navbar', home: true %>
 
-<% cl_url = cl_image_path @lynn_photo.photo, height: 1021, width: 1530, crop: :fill, :quality=>"auto:low" %>
+<% cl_url = cl_image_path @lynn_photo.photo, height: 1021, crop: :limit, :quality=>"auto:low" %>
 <% puts "new url: #{cl_url}" %>
 
 <div class="mainPhoto" style="background-image:url('<%= cl_url %>')">
@@ -11,6 +11,7 @@
     <i class="fas fa-caret-left"></i>
     <% end %>
   </div>
+  <div class="middlePart"></div>
   <div class="rightBtn btnColumn">
     <%= link_to nextPhoto_path(photo_id: @lynn_photo.id), remote: true do %>
     <i class="fas fa-caret-right"></i>
@@ -23,6 +24,13 @@
 <script>
   let y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 8000);
   document.querySelector(".rightBtn a").addEventListener("click", () => {clearInterval(y)});
-  document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y)})
+  document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y)});
+  document.querySelector(".middlePart").addEventListener("click", () => {
+    console.log("click");
+    const navBar = document.querySelector(".navbar");
+    navBar.classList.toggle("hideDiv");
+    document.querySelector(".footer").classList.toggle("hideDiv");
+
+  });
 
 </script>
