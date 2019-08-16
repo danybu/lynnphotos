@@ -4,7 +4,7 @@
 <% cl_url = cl_image_path @lynn_photo.photo, height: 1021, crop: :limit, :quality=>"auto:low" %>
 <% puts "new url: #{cl_url}" %>
 
-<div class="mainPhoto" style="background-image:url('<%= cl_url %>')">
+<div class="mainPhoto" style="background-image:url('<%= cl_url %>'), linear-gradient(to bottom, #FFF, #DDD 75%);">
 
   <div class="leftBtn btnColumn">
     <%= link_to previousPhoto_path(photo_id: @lynn_photo.id), remote: true do %>
@@ -28,10 +28,17 @@
   document.querySelector(".middlePart").addEventListener("click", () => {
     const navBar = document.querySelector(".navbar");
     navBar.classList.toggle("hideDiv");
+    const mainPhoto = document.querySelector(".mainPhoto");
     if (navBar.classList.contains("hideDiv")) {
-      document.querySelector(".mainPhoto").style.backgroundSize = "contain";
+      mainPhoto.style.backgroundSize = "contain";
+      mainPhoto.style.marginLeft = "0";
+      mainPhoto.style.marginRight = "0";
+
+
     } else {
-      document.querySelector(".mainPhoto").style.backgroundSize = "cover";
+      mainPhoto.style.backgroundSize = "cover";
+      mainPhoto.style.marginLeft = "20vh";
+      mainPhoto.style.marginRight = "20vh";
 
     }
     document.querySelector(".footer").classList.toggle("hideDiv");

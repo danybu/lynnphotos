@@ -2,7 +2,7 @@ document.querySelectorAll(".mainPhoto").forEach((mp) => {
   mp.style.opacity = 0;
 
   setTimeout(function () {
-    mp.style.backgroundImage = "url(<%= cl_image_path @lynn_photo.photo, crop: :fill %>)";
+    mp.style.backgroundImage = "url(<%= cl_image_path @lynn_photo.photo, crop: :fill %>), linear-gradient(to bottom, #FFF, #DDD 75%)";
     mp.style.opacity=1;
     }, 700);
 });
