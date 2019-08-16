@@ -22,7 +22,7 @@
 <%= render 'components/footer' %>
 
 <script>
-  let y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 8000);
+  y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 8000);
   document.querySelector(".rightBtn a").addEventListener("click", () => {clearInterval(y)});
   document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y)});
   document.addEventListener("keydown", (event) => {
