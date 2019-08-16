@@ -23,17 +23,21 @@
 
 <script>
   y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 5000);
-  document.querySelector(".rightBtn a").addEventListener("click", () => {clearInterval(y)});
-  document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y)});
+  document.querySelector(".rightBtn a").addEventListener("click", () => {clearInterval(y);
+    y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 5000);
+  });
+  document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y);
+    y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 5000);
+  });
   document.addEventListener("keydown", (event) => {
     console.log("key!");
     switch (event.key) {
       case "ArrowLeft":
-      clearInterval(y);
+      // clearInterval(y);
       document.querySelector(".leftBtn a").click();
       break;
       case "ArrowRight":
-      clearInterval(y);
+      // clearInterval(y);
       document.querySelector(".rightBtn a").click();
 
       break;
@@ -42,7 +46,7 @@
       // document.querySelector(".leftBtn a").click();
       break;
       case "ArrowDown":
-      clearInterval(y);
+      // clearInterval(y);
       document.querySelector(".rightBtn a").click();
       break;
     }
