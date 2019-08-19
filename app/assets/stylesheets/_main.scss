@@ -44,21 +44,29 @@ p {
   display: flex;
   justify-content: space-between;
   color: white;
-  transition: opacity .5s ease-in-out;
+  transition: opacity .7s ease-in-out;
   margin-left:20vh;
   margin-right:20vh;
   background-color:#CCC;
+  position:relative;
   a i {
     color: white;
   }
 }
 
+.navbarContainer {
+  display:flex;
+  justify-content:space-between;
+}
+.fullscreenClick  {
+  text-align:right;
+  color:#CCC;
+}
 .middlePart {
   width:100%;
 }
 
 body {
-  position:relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -129,14 +137,14 @@ body {
 
 #writeSimpleMailForm {
 
-    padding: 1em 2em;
-    border: 1px solid #CCC;
-    margin-top: 2em;
-    border-radius: 5px;
-    width: fit-content;
-    input, textarea {
-      width:100%;
-    }
+  padding: 1em 2em;
+  border: 1px solid #CCC;
+  margin-top: 2em;
+  border-radius: 5px;
+  width: fit-content;
+  input, textarea {
+    width:100%;
+  }
 }
 #sendSelection {
   display:none;

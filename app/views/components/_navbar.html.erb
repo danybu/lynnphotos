@@ -1,11 +1,11 @@
 <div class="navbar">
   <div class="bgTitle">
-      <%= link_to static_pages_home_path do %>
-          <h1 class="mainTitle">
-            Lynn Raeymaekers photography
+    <%= link_to static_pages_home_path do %>
+    <h1 class="mainTitle">
+      Lynn Raeymaekers photography
     </h1>
 
-      <% end %>
+    <% end %>
   </div>
   <div class="links">
     <ul>
@@ -19,5 +19,8 @@
       <li> <%= link_to 'Logout', destroy_user_session_path, method: :delete %> </li>
       <% end %>
     </ul>
+    <% if home %>
+    <div class="fullscreenClick">click image to view fullscreen</div>
+    <% end %>
   </div>
 </div>

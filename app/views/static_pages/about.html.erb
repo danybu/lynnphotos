@@ -19,7 +19,7 @@
     <div class="contactrow">  <div class="iconDiv"><i class="fas fa-mobile-alt"></i></div> 0032 489 56 93 05  </div>
     <div class="contactrow">  <div class="iconDiv"><i class="far fa-envelope"></i> </div> <a href="mailto:lynnraey1@gmail.com">lynnraey1@gmail.com </a></div>
   </div>
-  <div class="contact simple">
+  <div class="contact simple" style="display:none">
     <%= form_for :anything, :url => url_for(:controller => 'static_pages', :action => 'write_simple_mail'),
     :html => { :id => "writeSimpleMailForm" } do |f| %>
     <div class="formrow">
