@@ -4,7 +4,7 @@ and (max-width: 1024px)
 {  
 
   p {
-    font-size:13px;
+    font-size:12px;
   }
 
   .mainPhoto {
@@ -25,13 +25,16 @@ and (max-width: 1024px)
     //navbar
     .navbar {
       h1 {
-        font-size:30px !important;
+        font-size:18px !important;
+        padding-left:5em;
+        text-align:right;
       }
       margin-right:4vw;
       height:25vh;
       .links {
        margin: 0;
        padding-left: 4vw;
+       font-size:12px;
      }
    }
 
@@ -39,6 +42,7 @@ and (max-width: 1024px)
     padding-left:4vw;
     padding-right:4vw;
     height:15vh;
+    font-size:11px;
   }
 
 }
