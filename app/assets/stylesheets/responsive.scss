@@ -1,38 +1,44 @@
 @media only screen 
-  and (max-width: 1024px) 
-{   p {
-      font-size:13px;
-    }
+and (max-width: 1024px)
 
-    .mainPhoto {
-      margin-left:4vw;
-      margin-right:4vw;
-    }
-    .alert, .notice {
-      margin-left:4vw;
-    }
-    .mailConfirm {
-      margin-left:4vw;
-      margin-right:4vw;
-    }
-    .orderFramesDiv, .aboutLynnDiv {
-      padding:2vh 4vw;
-    }
+{  
+
+  p {
+    font-size:13px;
+  }
+
+  .mainPhoto {
+    margin-left:4vw;
+    margin-right:4vw;
+  }
+  .alert, .notice {
+    margin-left:4vw;
+  }
+  .mailConfirm {
+    margin-left:4vw;
+    margin-right:4vw;
+  }
+  .orderFramesDiv, .aboutLynnDiv {
+    padding:2vh 4vw;
+  }
 
     //navbar
     .navbar {
+      h1 {
+        font-size:30px !important;
+      }
       margin-right:4vw;
       height:25vh;
       .links {
-        margin-left:4vw;
-        margin-right:4vw;
-      }
-    }
+       margin: 0;
+       padding-left: 4vw;
+     }
+   }
 
-    .footer {
-      padding-left:4vw;
-      padding-right:4vw;
-      height:15vh;
-    }
+   .footer {
+    padding-left:4vw;
+    padding-right:4vw;
+    height:15vh;
+  }
 
 }
