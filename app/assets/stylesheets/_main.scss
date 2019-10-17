@@ -39,7 +39,16 @@ p {
     color:black;
   }
 }
+.flex {
+  display:flex;
+  .left {
+    padding-right: 10vw;
+  }
+  .right {
+    margin-bottom:4em;
+  }
 
+}
 .mainPhoto {
   flex: 1 0 auto;
   background-size:cover;

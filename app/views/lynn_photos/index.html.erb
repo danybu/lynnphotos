@@ -14,7 +14,7 @@
     });
     return selection;
   }
-</script>
+</script> 
 
 <div class="bodyContainer">
   <div class="photoFullScreen">
@@ -24,17 +24,32 @@
 
   <div class="orderFramesDiv">
     <h2>Prints</h2>
-    <p>The following pictures are available as prints, with different frame options. </p><p> Do contact me for more information.</p>
-    <div class="lynnphotosContainer">
-      <% @lynn_photos.each do |lphoto| %>
-      <div class="photoContainer">
-        <%= link_to lynn_photo_path(lphoto), remote: true do %>
-        <%= cl_image_tag lphoto.photo, height: 250, crop: :fill %>
-        <% end %>
-        <div class="bottomLine">
-          <p class="idDiv" style="display:none"> <%= lphoto.id %></p>
-          <p>photo: <%= lphoto.city_taken %>, <%= lphoto.country_taken %> <%= lphoto.year %> <br> <em style="color:#999">reference: <%= lphoto.id %></em></p>
-          <div class="icons">
+    <div class="flex">
+      <div class="left">
+      <p>
+      All photo’s on my site are available for sale. I print them on Photo Matt Fibre. </p>
+      <p>
+       I can send you just the picture or a framed picture with additional matting in black or white as you prefer. In the example you can see one picture with a black frame. 
+       The picture size is now 27x18cm.     
+     </p>
+     <p>Please contact me for more information.</p>
+   </div>
+   <div class="right">
+     <%= cl_image_tag "vaste%20fotos/kader_met_foto_voorbeeld_cropped.jpg", height: 500, crop: :fill %>
+   </div>
+ </div>
+
+ <h2>Overview</h2>
+ <div class="lynnphotosContainer">
+  <% @lynn_photos.each do |lphoto| %>
+  <div class="photoContainer">
+    <%= link_to lynn_photo_path(lphoto), remote: true do %>
+    <%= cl_image_tag lphoto.photo, height: 250, crop: :fill %>
+    <% end %>
+    <div class="bottomLine">
+      <p class="idDiv" style="display:none"> <%= lphoto.id %></p>
+      <p>photo: <%= lphoto.city_taken %>, <%= lphoto.country_taken %> <%= lphoto.year %> <br> <em style="color:#999">reference: <%= lphoto.id %></em></p>
+      <div class="icons">
         <!--     <div class="likeDiv" onclick="toggleLike(this);">
             <i class="far fa-heart" style="color:#AAA"></i>
           </div> -->
