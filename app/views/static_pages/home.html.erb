@@ -24,12 +24,12 @@
 <%= render 'components/footer' %>
 
 <script>
-  y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 10000);
+  y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 13000);
   document.querySelector(".rightBtn a").addEventListener("click", () => {clearInterval(y);
-    y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 10000);
+    y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 13000);
   });
   document.querySelector(".leftBtn a").addEventListener("click", () => {clearInterval(y);
-    y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 10000);
+    y = setInterval(function(){ console.log("click"); document.querySelector(".rightBtn a").click(); }, 13000);
   });
   document.addEventListener("keydown", (event) => {
     console.log("key!");
