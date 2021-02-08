@@ -44,7 +44,7 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'devise'
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
